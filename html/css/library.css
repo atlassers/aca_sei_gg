@@ -1,0 +1,63 @@
+.statistical{
+	border: 1px white;
+  	background-color: white;
+  	padding: 10px;
+  	text-align: justify;
+  	font-family: Copperplate, Papyrus, fantasy;
+  	background-image: url('https://cdn.wallpapersafari.com/92/94/3grNzW.jpg'); 
+}
+.card-body{
+	font-family: Copperplate, Papyrus, fantasy;	
+	background-image: url('https://cdn.wallpapersafari.com/92/94/3grNzW.jpg'); 
+}
+
+.ribbon {
+    font-size: 16px !important;
+    width: 50%;
+    position: relative;
+    background: #950000;
+    color: #fff;
+    text-align: center;
+    padding: 1em 2em;
+    margin: 2em auto 3em;
+}
+
+.ribbon: before, .ribbon: after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -1em;
+    border: 1,5em solid #600000;
+    z-index: -1;
+}
+
+.ribbon:before {
+    left: -2em;
+    border-right-width: 1,5em;
+    border-left-color: transparent;
+}
+
+.ribbon:after {
+    right: -2em;
+    border-left-width: 1,5em;
+    border-right-color: transparent;
+}
+
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-color: #7d0000 transparent transparent transparent;
+    bottom: -1em;
+}
+
+.ribbon .ribbon-content:before {
+    left: 0;
+    border-width: 1em 0 0 1em;
+}
+
+.ribbon .ribbon-content:after {
+    right: 0;
+    border-width: 1em 1em 
+    }

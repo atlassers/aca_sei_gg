@@ -1,0 +1,152 @@
+<!-- 
+	-> il primo tag in una pagina html è proprio html
+	-> al suo interno abbiamo l ahead, che contiene alcuni riferimenti alle librerie e ai css che utilizzeremo (o i metadata)
+	-> e poi il body che contiene il contenuto reale della pagina
+	
+	il title diventa il nome nella linguetta che vedo sulla pagina
+	
+	il meta è un informazione generale che in questo caso mi indica che il set di caratteri che dovrò utilizzare sono UTF-08
+	
+	il tag link mi serve per collegare le risorse statiche 
+	href è una proprietà che mi va ad indicare un indirizzo. (ora vado ad importare un libreria css, cioè un file che contiene delle librerie già scritte che mi semplificano i lavoro)
+	il tag scrpt mi prende il linguaggio di scripting o un pezzo di script
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+	 rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+	integrity è un codice che mi identifica il contenuto della pagina
+	
+	il div è un contenitore e rappresenta un pezzo della pagina, come viene rappresentato lo decidiamo noi con gli stili
+	
+	h5: i tag h rappresentano degli header, non come quello usato in precedenza ma come stile tipografico. Come quelli che troviamo in word. 
+	
+	l'id del div ci serv per riferirci a questo oggetto specifico all' interno del file javaScript. 
+	
+	p: sta per paragrafo
+	
+	voglio centrare il contenuto del body, scrivo <body class: (scrivo class ogni volta che voglio riferirmi ad uno stile) e poi aca-center">
+	
+	aca-center lo abbiamo scritto nel css 
+	
+	possiamo concatenare gli stili, cioè noi possiamo scrivere tutto in unico stile o componendo più stili
+	
+	tutte le cose che io scrivo nel contenitore più grande ricadono nei componenti più piccoli. 
+-->
+
+<html>
+
+<head>
+	<title> Library </title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+		rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+		crossorigin="anonymous">
+	<link rel="stylesheet" href="css/library.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="script/Book.js"></script>
+	<script src="services/core/ajax-core.js"></script>
+	<script src="services/core/base-service.js"></script>
+	<script src="services/Book-service.js"></script>
+	<script src="script/Book.js"></script>
+</head>
+
+<body class="aca-center">
+
+	<div class="card text-center  aca-card">
+		<div class="card text-left">
+			<div class="card-body container py-1">
+				<div class="row">
+					<!-- card text-center m-2 col text-white bg-primary -->
+					<div class="back">
+						<div class="card-body p-1">
+
+							<img class="card-img-top"
+								src="https://storage.googleapis.com/yk-cdn/photos/pdp/thibaud-poirier/trinity-college-library.jpg"
+								alt=Card image cap><img>
+
+							<div class="card-body container py-1">
+								<div class="row">
+									<div class="card text-center m-2 col text-white bg-success">
+										<div class="card-body p-1">
+											<div id="totalBook" class="h2"></div>
+											<div class="h6">Total Books</div>
+										</div>
+									</div>
+
+									<div class="card text-center m-2 col text-white bg-success">
+										<div class="card-body p-1">
+											<div id="totalBookValid" class="h2"></div>
+											<div class="h6">Total Valid Book</div>
+										</div>
+									</div>
+
+									<div class="card text-center m-2 col text-white bg-success">
+										<div class="card-body p-1">
+											<div id="totalBookNotValid" class="h2"></div>
+											<div class="h6">Total Not Valid Books</div>
+										</div>
+									</div>
+
+
+									<div class="card-body p-1">
+										<div class="h3">Library </div>
+										<div class="card-body">
+											<h5 class="card-title text-center">Collegamento al BE</h5>
+											<p class="card-text text-center">Tabella per visualizzare la response
+												del BE
+											</p>
+											<button id="btnShow" class="btn btn-success">show</button>
+											<button id="btnAdd" class="btn btn-success">add</button>
+											<div id="books" class="table mt-3"></div>
+										</div>
+
+
+											<h1 class="ribbon">
+												<strong class="ribbon-content">Everybody loves books!</strong>
+											</h1>
+
+
+										<form id="saveForm" class="saveForm p-2">
+
+											<div id="statistics" class="statistical"></div>
+
+											<div class="form-group">
+												<input id="bookId" class="form-control" type="number" name="bookId"
+													placeholder="Enter Book Id">
+											</div>
+
+											<div class="form-group">
+												<input id="bookTitle" class="form-control" type="text" name="status"
+													placeholder="Enter Book Title">
+											</div>
+
+											<div class="form-group">
+												<input id="bookGenre" class="form-control" type="text" name="status"
+													placeholder="Enter Book Genre">
+											</div>
+
+											<div class="form-group">
+												<input id="bookAuthorId" class="form-control" type="number"
+													name="bookAuthorId" placeholder="Enter Author ID">
+											</div>
+
+											<div class="form-group">
+												<!-- attenzione: devo inserire il type text per visualizzare la data -->
+												<input id="bookPubblicationDate" class="form-control" type="text"
+													name="bookPubblicationDate" placeholder="Enter Pubblication Date">
+											</div>
+
+											<div class="form-group">
+												<input id="bookNumPages" class="form-control" type="number"
+													name="bookNumPages" placeholder="Enter Num Pages">
+											</div>
+
+											<div class="form-group">
+												<input id="btnSubmit" class="form-control btn btn-success" type="submit"
+													value="Save Book">
+											</div>
+										</form>
+
+</body>
+
+</html>
